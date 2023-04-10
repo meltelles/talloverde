@@ -1,10 +1,11 @@
 import Header from "./components/Header";
-import Navbar from "./components/Navbar"
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
     <>
     <Header />
+    <ItemListContainer greeting={"Bienvenidos"} />
     </>
   );
 }
