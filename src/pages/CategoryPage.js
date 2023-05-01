@@ -8,3 +8,5 @@ export default function CategoryPage() {
         <ItemListContainer greeting={greeting} />
     );
 }
+
+
