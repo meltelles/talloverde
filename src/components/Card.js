@@ -1,7 +1,8 @@
 import useCounter from "../hooks/useCounter";
+import {Link} from "react-router-dom";
 
 export default function Card({ product }) {
-    const { name, imgUrl, description, price, } = product;
+    const { name, imgUrl, description, price, id } = product;
     const { counter, increment, decrement, } = useCounter();
 
     return (
@@ -16,7 +17,7 @@ export default function Card({ product }) {
                         <div className="mx-2">{counter}</div>
                         <button onClick={increment} type="button" className="btn btn-primary">+</button>
                     </div>
-                    <button className="btn btn-primary">Añadir a carrito</button>
+                    <Link to={`/products/${id}`} className="btn btn-primary">Ver más</Link>
                 </div>
 
             </div>
