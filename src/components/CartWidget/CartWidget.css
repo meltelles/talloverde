@@ -1,0 +1,14 @@
+.cart__container {
+  color: white;
+  margin: 0 20px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart__container:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15%;
+}
