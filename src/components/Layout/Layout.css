@@ -1,0 +1,17 @@
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--green);
+}
+
+.header__link {
+  text-decoration: none;
+}
+
+.header__title {
+  margin-left: 20px;
+  font-size: 30px;
+  color: aliceblue;
+}
