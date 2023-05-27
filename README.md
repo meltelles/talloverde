@@ -9,4 +9,4 @@ Este proyecto consiste en una página e-commerce de venta de frutas y verduras o
 
 ## Aplicación deployada
 
-[talloverde.vercel.app](https://www.talloverde.vercel.app)
+[talloverde.vercel.app](https://talloverde.vercel.app)
