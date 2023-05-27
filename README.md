@@ -7,3 +7,6 @@ Este proyecto consiste en una página e-commerce de venta de frutas y verduras o
 - react-bootstrap: Se utilizó para hacer estilo 
 - react-toastify: Para notificaciones
 
+## Aplicación deployada
+
+[talloverde.vercel.app](talloverde.vercel.app)
