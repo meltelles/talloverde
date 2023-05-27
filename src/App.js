@@ -3,6 +3,10 @@ import Layout from "./components/Layout/Layout";
 import NotFoundPage from "./pages/NotFoundPage";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
+import CustomProvider from "./components/CustomProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +26,10 @@ const router = createBrowserRouter([
         element: <ItemDetailContainer />,
       },
       {
+        path: "cart",
+        element: <CartPage />,
+      },
+      {
         path: "*",
         element: <NotFoundPage />,
       },
@@ -32,7 +40,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <CustomProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </CustomProvider>
     </>
   );
 }
