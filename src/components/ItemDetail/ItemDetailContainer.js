@@ -15,17 +15,6 @@ export default function ItemDetailContainer() {
   const { id } = useParams();
   const { product, isLoading } = useProduct(id);
 
-  if (!Number.isInteger(parseInt(id))) {
-    return (
-      <Container>
-        <div>
-          <h2>El id ingresado no es valido</h2>
-          <p>Por favor, ingrese un id valido</p>
-        </div>
-      </Container>
-    );
-  }
-
   if (isLoading) {
     return (
       <Container>
@@ -34,9 +23,20 @@ export default function ItemDetailContainer() {
     );
   }
 
-  return (
-    <Container>
-      <ItemDetail item={product} />
-    </Container>
-  );
+  if (!product) {
+    return (
+      <Container>
+        <div>
+          <h2>El id ingresado no es valido</h2>
+          <p>Por favor, ingrese un id valido</p>
+        </div>
+      </Container>
+    );
+  } else {
+    return (
+      <Container>
+        <ItemDetail item={product} />
+      </Container>
+    );
+  }
 }

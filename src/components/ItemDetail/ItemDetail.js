@@ -1,7 +1,17 @@
+import { toast } from "react-toastify";
 import useCounter from "../../hooks/useCounter";
+import { useCart } from "../CustomProvider";
+
 export default function ItemDetail({ item }) {
   const { name, price, description, imgUrl } = item;
-  const { counter, increment, decrement } = useCounter();
+  const { counter, increment, decrement, resetCounter } = useCounter();
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(item, counter);
+    resetCounter();
+    toast.success("Se agrego el elemento al carrito!");
+  };
 
   return (
     <div className="container mt-5">
@@ -24,6 +34,7 @@ export default function ItemDetail({ item }) {
               onClick={decrement}
               type="button"
               className="btn btn-primary"
+              disabled={counter <= 0}
             >
               -
             </button>
@@ -32,11 +43,16 @@ export default function ItemDetail({ item }) {
               onClick={increment}
               type="button"
               className="btn btn-primary"
+              disabled={counter >= 20}
             >
               +
             </button>
           </div>
-          <button className="btn btn-primary w-50 mx-auto">
+          <button
+            className="btn btn-primary w-50 mx-auto"
+            onClick={handleAddToCart}
+            disabled={counter <= 0}
+          >
             Añadir a carrito
           </button>
         </div>
